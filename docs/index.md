@@ -1,6 +1,7 @@
 # Snarl Network Protocol Developer Guide
 
-[Overview](https://github.com/fullphat/snarl_network_protocol/wiki)
+The Snarl Network Protocol (pronounced as "snap", and abbreviated to "SNP") is a platform-agnostic TCP/IP protocol used to transmit notifications between computers on the same network, or even across the Internet.  It's highly extensible and is both easy to read and easy to implement - there are libraries available for .net and Python already, and likely other languages as well.
+
 
 SNP 3.1
 * [Overview](SNP-3.1)
