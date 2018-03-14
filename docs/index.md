@@ -1,3 +1,5 @@
+# Snarl Network Protocol Developer Guide
+
 [Overview](https://github.com/fullphat/snarl_network_protocol/wiki)
 
 SNP 3.1
