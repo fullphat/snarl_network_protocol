@@ -127,6 +127,6 @@ Encrypting a message requires both authentication and a valid encryption algorit
 
 The encrypted message still has a header and terminating line, however the content is encrypted into a byte array which is then encoded as a hexadecimal string.
 
-> [Info](http://fullphat.net/docs/icons/info.png) _Hexadecimal-encoding the message content will double the size of the message packet compared to the same packet unencrypted.  As notifications are by nature intended to be brief, this should not be a significant issue, however if a client typically transfers a large amount of metadata along with the notification, consideration should be given to using a different mechanism to transfer the data - especially if network bandwidth is a concern._
+> ![Info](http://fullphat.net/docs/icons/info.png) _Hexadecimal-encoding the message content will double the size of the message packet compared to the same packet unencrypted.  As notifications are by nature intended to be brief, this should not be a significant issue, however if a client typically transfers a large amount of metadata along with the notification, consideration should be given to using a different mechanism to transfer the data - especially if network bandwidth is a concern._
 
 
