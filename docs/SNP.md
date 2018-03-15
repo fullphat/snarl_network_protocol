@@ -5,7 +5,7 @@
 1. [Message Structure](#message-structure)  
    i. [Requests](#request-structure)  
    ii. [Responses](#response-structure)
-1. [Commands](#commands)
+1. [Commands](#commands)  
    i. [Registering](#registering)  
    ii. [Notifications](#notifications)  
    iii. [Forwarding](#forwarding)  
