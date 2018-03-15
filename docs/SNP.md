@@ -97,6 +97,29 @@ The response header is as follows:
 |`authentication`|The algorithm, key hash and salt used if authentication is required.|
 |`encryption`|The encryption algorithm and initialisation value used to secure the message content if it's encrypted.|
 
+### Content
+
+Typically no content is returned.  However, if a request returns an error, the following will be included in the content:
+
+|Item|Description|
+|----|-----------|
+|`error-number`|The Snarl status code indicating the error.|
+|`error-name`|The name of the error code.|
+|`reason`|If available, a more human-readable explaination of what went wrong.|
+
+### Example Response
+
+    SNP/3.1 SUCCESS
+    END
+
+
+    SNP/3.1 FAILED
+    error-number: 216
+    error-name: UserIsAway
+    reason: The user is currently away.  The notification may have been displayed, ignored, or logged as missed
+    END
+
+
 # Commands
 
 ## Registering
