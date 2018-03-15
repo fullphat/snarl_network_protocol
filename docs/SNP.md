@@ -109,9 +109,12 @@ Typically no content is returned.  However, if a request returns an error, the f
 
 ### Example Response
 
+Success:
+
     SNP/3.1 SUCCESS
     END
 
+Less success:
 
     SNP/3.1 FAILED
     error-number: 216
