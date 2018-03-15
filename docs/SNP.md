@@ -40,7 +40,7 @@ A SNP 3.1 conversation is held between a _client_ and a _server_, with the clien
 
 The client and server may be on the same physical machine, or they may be on different machines.  If a client wishes to send a request and then close, it _must_ wait until it has received the response from the server, even if it does not plan to do anything with it.
 
-> Callbacks _may_ be received on the port used by the client to issue the requests, however this is not recommended as it requires more complex logic within the client to distinguish between an expected response and an out-of-cycle callback message.  The recommendation is for the client application to create a separate listening socket and pass the port number of that socket when creating notifications.  This then allows the client to run a tight send/receive message loop.
+> ![Info](http://fullphat.net/docs/icons/info.png) Callbacks _may_ be received on the port used by the client to issue the requests, however this is not recommended as it requires more complex logic within the client to distinguish between an expected response and an out-of-cycle callback message.  The recommendation is for the client application to create a separate listening socket and pass the port number of that socket when creating notifications.  This then allows the client to run a tight send/receive message loop.
 
 ## Other Metrics
 
