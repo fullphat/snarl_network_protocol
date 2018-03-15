@@ -5,8 +5,11 @@
 1. [Message Structure](#message-structure)  
    i. [Requests](#request-structure)  
    ii. [Responses](#response-structure)
-1. [Forwarding](#forwarding)
-1. [Subscriptions](#subscriptions)
+1. [Commands](#commands)
+   i. [Registering](#registering)
+   ii. [Notifications](#notifications)
+   iii. [Forwarding](#forwarding)
+   iv. [Subscriptions](#subscriptions)
 1. [Security](#security)  
    i. [Authentication](#authentication)  
    ii. [Encryption](#encryption)
@@ -94,11 +97,21 @@ The response header is as follows:
 |`authentication`|The algorithm, key hash and salt used if authentication is required.|
 |`encryption`|The encryption algorithm and initialisation value used to secure the message content if it's encrypted.|
 
-# Forwarding
+# Commands
+
+## Registering
 
 ... Section to be completed ...
 
-# Subscriptions
+## Notifications
+
+... Section to be completed ...
+
+## Forwarding
+
+... Section to be completed ...
+
+## Subscriptions
 
 ... Section to be completed ...
 
