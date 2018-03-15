@@ -1,3 +1,5 @@
+# SNP 3.1
+
 1. [Introduction](#introduction)
 1. [Overview](#overview)
 1. [Message Structure](#message-structure)  
@@ -20,16 +22,16 @@ SNP 3.1 adds a number of improvements to SNP 3.0 while maintaining several of th
 
 * **Granular security controls:** servers listening for incoming SNP 3.1 messages should provide the user with the ability to block forwarded notifications, and to require authorisation for such notifications;
 
-* **Flexibility:** callbacks may be directed to a separate port created specifically for receiving out-of-cycle messages, or POSTed to a URL;
+* **Flexibility:** callbacks can now be directed to a separate TCP port created specifically for receiving out-of-cycle messages, or POSTed to a URL;
 
 * **More descriptive errors:** in addition to returning the code and name of the error that occurred, SNP 3.1 also defines a further parameter that allows the server to return more context around why the error occurred.
 
 # Overview
 ## Communication Cycle
-A SNP 3.1 conversation is held between a _client_ and a _server_ with the client initiating the request, and the server responding to the request appropriately.  The process is as follows:
+A SNP 3.1 conversation is held between a _client_ and a _server_, with the client initiating the request and the server responding to the request appropriately.  The process is as follows:
 
 1. Client opens a connection to the server
-1. Client issues a request
+1. Client then issues a request
 1. Server takes action and issues an appropriate response
 1. Client either closes the connection or repeats step 2
 
@@ -55,7 +57,7 @@ SNP 3.1 defines two types of message: _Request_ and _Response_.  Both are very s
 ### Header
 The header describes the nature of the request:
 
-**`{id/version} {action} [{authentication} [{encryption}]]`**
+    {id/version} {action} [{authentication} [{encryption}]]
 
 |Item|Description|
 |----|-----------|
@@ -83,7 +85,7 @@ Each line of content is formatted in a similar way to MIME and HTTP headers, as 
 ### Header
 The response header is as follows:
 
-**`{id/version} {response_type} [{authentication} [{encryption}]]`**
+    {id/version} {response_type} [{authentication} [{encryption}]]
 
 |Item|Description|
 |----|-----------|
@@ -94,9 +96,11 @@ The response header is as follows:
 
 # Forwarding
 
+... Section to be completed ...
 
 # Subscriptions
 
+... Section to be completed ...
 
 
 
@@ -105,7 +109,7 @@ The response header is as follows:
 ## Authentication
 To authenticate a message, the password must be translated into a _key hash_ using a supported _hash algorithm_ and and _salt_.  This is included in the header, as follows:
 
-**`SNP/3.1 {action} {hash_algorithm}:{key_hash}.{salt}`**
+    SNP/3.1 {action} {hash_algorithm}:{key_hash}.{salt}
 
 See the [Developer Guide](Snarl-Developer-Guide#authentication) for details on supported `hash_algorithm` types and how to generate the `key_hash` and `salt`.
 
@@ -119,10 +123,10 @@ See the [Developer Guide](Snarl-Developer-Guide#authentication) for details on s
 ## Encryption
 Encrypting a message requires both authentication and a valid encryption algorithm and initialisation value.  The header therefore looks thus:
 
-**`SNP/3.1 {action} {hash_algorithm}:{key_hash}.{salt} {encryption_algorithm}:{iv}`**
+    SNP/3.1 {action} {hash_algorithm}:{key_hash}.{salt} {encryption_algorithm}:{iv}
 
 The encrypted message still has a header and terminating line, however the content is encrypted into a byte array which is then encoded as a hexadecimal string.
 
-> _Hexadecimal-encoding the message content will double the size of the message packet compared to the same packet unencrypted.  As notifications are by nature intended to be brief, this should not be a significant issue, however if a client typically transfers a large amount of metadata along with the notification, consideration should be given to using a different mechanism to transfer the data - especially if network bandwidth is a concern._
+> [Info](http://fullphat.net/docs/icons/info.png) _Hexadecimal-encoding the message content will double the size of the message packet compared to the same packet unencrypted.  As notifications are by nature intended to be brief, this should not be a significant issue, however if a client typically transfers a large amount of metadata along with the notification, consideration should be given to using a different mechanism to transfer the data - especially if network bandwidth is a concern._
 
 
