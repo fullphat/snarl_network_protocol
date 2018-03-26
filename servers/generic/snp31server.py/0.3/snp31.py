@@ -152,7 +152,10 @@ def DecodeRequest(request, result):
     return 132,"NothingToDo"
 
   else:
-    # need to check action is either NOTIFY or FORWARD...
+    # check action is either NOTIFY or FORWARD...
+    hdr = content[0].split(' ', 1)
+    if hdr[1] != "NOTIFY" and hdr[1] != "FORWARD":
+        return 112,"NotImplemented"
 
 
     # we'll check for these afterwards...
