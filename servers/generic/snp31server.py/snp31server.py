@@ -95,7 +95,7 @@ if __name__ == "__main__":
     print('Copyright (c) 2018 full phat products')
     print('')
 
-    if len(sys.argv) > 1:
+    if len(sys.argv) > portArg:
         try:
             startport = int(sys.argv[portArg])
 
