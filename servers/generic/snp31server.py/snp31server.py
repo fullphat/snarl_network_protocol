@@ -8,7 +8,7 @@ import snp31
 import os
 import time
 
-ver = "0.3"
+ver = "0.3.1"
 
 verboseMode = False
 
@@ -33,7 +33,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
             # pretty klunky, but if data was received, process it now
             if not quit:
                 if verboseMode:
-                    print('[' + data.replace('\r\n', '¬') + ']')
+                    print('\033[1m[' + data.replace('\r\n', '¬') + ']\033[0m')
 
                 result = { }
                 r,v = snp31.DecodeRequest(data, result)
