@@ -224,9 +224,9 @@ def DecodeHeader(header):
 
   s = header.split(' ', 1)
   if len(s) < 2:
-    return 136,"UnsuportedProtocol"
-
-  return s[1];
     return 130,"InvalidHeader"
+
+  else:
+    return s[1]
 
 
