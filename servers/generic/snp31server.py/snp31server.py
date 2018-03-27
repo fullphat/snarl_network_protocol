@@ -10,6 +10,8 @@ import time
 
 ver = "0.3"
 
+verboseMode = False
+
 class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
     def handle(self):
         print('Connection from ' + str(self.client_address) + ' opened')
@@ -30,7 +32,8 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
 
             # pretty klunky, but if data was received, process it now
             if not quit:
-                print('[' + data.replace('\r\n', '¬') + ']')
+                if verboseMode:
+                    print('[' + data.replace('\r\n', '¬') + ']')
 
                 result = { }
                 r,v = snp31.DecodeRequest(data, result)
@@ -73,6 +76,7 @@ def print_help():
 if __name__ == "__main__":
 
     startport = 9888
+    portArg = 1
 
     if len(sys.argv) > 1:
         if sys.argv[1] == "--help":
@@ -83,14 +87,17 @@ if __name__ == "__main__":
             do_demo()
             sys.exit(0)
 
+        elif sys.argv[1] == "--verbose":
+            verboseMode = True
+            portArg += 1
 
     print('\nSNP31server (multi-platform) ' + ver)
-    print('Copyright (C) 2017 full phat products')
+    print('Copyright (c) 2018 full phat products')
     print('')
 
     if len(sys.argv) > 1:
         try:
-            startport = int(sys.argv[1])
+            startport = int(sys.argv[portArg])
 
         except ValueError:
             print('Invalid TCP port specified.')
