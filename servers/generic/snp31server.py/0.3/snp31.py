@@ -161,47 +161,49 @@ def DecodeRequest(request, result):
   title = ""
   text = ""
     
-    # process each line...
-    for line in content[1:len(content)-1]:
-      # split on ': '
-      kvp = line.split(': ', 1)
+  # process each line...
+  for line in content[1:len(content)-1]:
+    # split on ': '
+    kvp = line.split(': ', 1)
 
-      if kvp[0] == "title":
-        title = kvp[1]
+    if kvp[0] == "title":
+      title = kvp[1]
 
-      elif kvp[0] == "text":
-        text = kvp[1]
+    elif kvp[0] == "text":
+      text = kvp[1]
         
-      elif kvp[0] == "icon":
-        # process the icon...
-        b,s = is_prefixed_icon(kvp[1])
-        if b:
-          kvp[1] = s
+    elif kvp[0] == "icon":
+      # process the icon...
+      b,s = is_prefixed_icon(kvp[1])
+      if b:
+        kvp[1] = s
         
-        #kvp[1] = decode_icon(kvp[1])
-        print('ICON>>' + kvp[1])
+      #kvp[1] = decode_icon(kvp[1])
+      print('ICON>>' + kvp[1])
 
-      elif kvp[0] == "icon-phat64":
-        kvp[0] = "icon"
-        kvp[1] = decode_icon("phat64", kvp[1])
+    elif kvp[0] == "icon-phat64":
+      kvp[0] = "icon"
+      kvp[1] = decode_icon("phat64", kvp[1])
 
-      elif kvp[0] == "icon-url":
-        kvp[0] = "icon"
-        kvp[1] = decode_icon("url", kvp[1])
+    elif kvp[0] == "icon-url":
+      kvp[0] = "icon"
+      kvp[1] = decode_icon("url", kvp[1])
 
-      # store in the dictionary...
-      result[kvp[0]] = kvp[1]
+    # store in the dictionary...
+    result[kvp[0]] = kvp[1]
         
-      #print(kvp[0] + ' --> ' + kvp[1])
+    #print(kvp[0] + ' --> ' + kvp[1])
 
-    # uncomment to print out the dictionary content...
-    #print(result)
+  # uncomment to print out the dictionary content...
+  #print(result)
 
-    if title == "" and text == "":
-      return 109,"ArgMissing"
-    
+  if title == "" and text == "":
+    return 109,"ArgMissing"
 
+  else:
     return 0,""
+
+
 
 """
     <string> DecodeHeader(string header)
