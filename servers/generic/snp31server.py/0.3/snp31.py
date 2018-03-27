@@ -16,7 +16,7 @@ import os
 """
 def download_icon(url):
   # download and save to cache...
-  uxd = uuid.uuid4()                  # create a UUID
+  uxd = uuid.uuid4()
   path = 'cached/' + str(uxd) + '.png'
 
   try:
@@ -122,7 +122,7 @@ def decode_icon(suffix, data):
 
 
 """
-    bool DecodeRequest(str request, dict result)
+    <int,string> DecodeRequest(str request, dict result)
 
     "request" should be a complete SNP 3.1 request, including header and footer.  On successful
     decoding, this function returns True and populates "result" with 'title', 'text' and 'icon'
@@ -140,28 +140,26 @@ def DecodeRequest(request, result):
   content = request.splitlines()
   #print (content)
 
-  # validate: should start with 'SNP/3.1' and end with 'END'
+  # check footer
 
-  if not content[0].startswith('SNP/3.1'):
-    return 136,"UnsuportedProtocol"
-
-  elif content[len(content)-1] != 'END':
+  if content[len(content)-1] != 'END':
     return 107,"BadPacket"
 
-  elif len(content) < 3:
+  # check we have something...
+
+  if len(content) < 3:
     return 132,"NothingToDo"
 
-  else:
-    # check action is either NOTIFY or FORWARD...
-    hdr = content[0].split(' ', 1)
-    if hdr[1] != "NOTIFY" and hdr[1] != "FORWARD":
-        return 112,"NotImplemented"
+  # check header and get command...
 
+  cmd = DecodeHeader(content[0])  
+  if cmd != "NOTIFY" and cmd != "FORWARD":
+    return 112,"NotImplemented"
 
-    # we'll check for these afterwards...
+  # we'll check for these afterwards...
     
-    title = ""
-    text = ""
+  title = ""
+  text = ""
     
     # process each line...
     for line in content[1:len(content)-1]:
@@ -204,4 +202,29 @@ def DecodeRequest(request, result):
     
 
     return 0,""
+
+"""
+    <string> DecodeHeader(string header)
+
+    Attempts to decode header.  Returns the SNP 3.1 command or an empty string
+    if the header is invalid
+
+"""
+
+def DecodeHeader(header):
+
+  # should start with 'SNP/3.1'...
+
+  if not header.startswith('SNP/3.1'):
+    return 136,"UnsuportedProtocol"
+
+  # get command (should be second item after splitting on a single space...)
+
+  s = header.split(' ', 1)
+  if len(s) < 2:
+    return 136,"UnsuportedProtocol"
+
+  return s[1];
+    return 130,"InvalidHeader"
+
 
