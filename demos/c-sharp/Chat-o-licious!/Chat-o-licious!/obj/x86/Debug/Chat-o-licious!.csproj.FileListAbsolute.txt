@@ -1,0 +1,27 @@
+Q:\My Documents\coding\cSharp\Chat-o-licious!\Chat-o-licious!\bin\Debug\Chat-o-licious!.exe
+Q:\My Documents\coding\cSharp\Chat-o-licious!\Chat-o-licious!\bin\Debug\Chat-o-licious!.pdb
+Q:\My Documents\coding\cSharp\Chat-o-licious!\Chat-o-licious!\bin\Debug\libSnarl.dll
+Q:\My Documents\coding\cSharp\Chat-o-licious!\Chat-o-licious!\bin\Debug\libSNP31.dll
+Q:\My Documents\coding\cSharp\Chat-o-licious!\Chat-o-licious!\bin\Debug\libSnarl.pdb
+Q:\My Documents\coding\cSharp\Chat-o-licious!\Chat-o-licious!\bin\Debug\libSNP31.pdb
+Q:\My Documents\coding\cSharp\Chat-o-licious!\Chat-o-licious!\obj\x86\Debug\Chat-o-licious!.csprojResolveAssemblyReference.cache
+Q:\My Documents\coding\cSharp\Chat-o-licious!\Chat-o-licious!\obj\x86\Debug\Chat_o_licious_.Form1.resources
+Q:\My Documents\coding\cSharp\Chat-o-licious!\Chat-o-licious!\obj\x86\Debug\Chat_o_licious_.Properties.Resources.resources
+Q:\My Documents\coding\cSharp\Chat-o-licious!\Chat-o-licious!\obj\x86\Debug\Chat-o-licious!.csproj.GenerateResource.Cache
+Q:\My Documents\coding\cSharp\Chat-o-licious!\Chat-o-licious!\obj\x86\Debug\Chat-o-licious!.exe
+Q:\My Documents\coding\cSharp\Chat-o-licious!\Chat-o-licious!\obj\x86\Debug\Chat-o-licious!.pdb
+Q:\My Documents\coding\cSharp\Chat-o-licious!\Chat-o-licious!\bin\Debug\Chat-o-licious!.exe.config
+K:\git\snarl\5.0\demos\Chat-o-licious!\Chat-o-licious!\bin\Debug\Chat-o-licious!.exe.config
+K:\git\snarl\5.0\demos\Chat-o-licious!\Chat-o-licious!\obj\x86\Debug\Chat-o-licious!.exe
+K:\git\snarl\5.0\demos\Chat-o-licious!\Chat-o-licious!\obj\x86\Debug\Chat-o-licious!.pdb
+Q:\My Documents\coding\cSharp\snp\demos\Chat-o-licious!\Chat-o-licious!\bin\Debug\Chat-o-licious!.exe.config
+Q:\My Documents\coding\cSharp\snp\demos\Chat-o-licious!\Chat-o-licious!\obj\x86\Debug\Chat-o-licious!.exe
+Q:\My Documents\coding\cSharp\snp\demos\Chat-o-licious!\Chat-o-licious!\obj\x86\Debug\Chat-o-licious!.pdb
+Q:\My Documents\coding\cSharp\snp\demos\Chat-o-licious!\Chat-o-licious!\obj\x86\Debug\Chat-o-licious!.csprojResolveAssemblyReference.cache
+Q:\My Documents\coding\cSharp\snp\demos\Chat-o-licious!\Chat-o-licious!\obj\x86\Debug\Chat_o_licious_.Form1.resources
+Q:\My Documents\coding\cSharp\snp\demos\Chat-o-licious!\Chat-o-licious!\obj\x86\Debug\Chat_o_licious_.Properties.Resources.resources
+Q:\My Documents\coding\cSharp\snp\demos\Chat-o-licious!\Chat-o-licious!\obj\x86\Debug\Chat-o-licious!.csproj.GenerateResource.Cache
+Q:\My Documents\coding\cSharp\snp\demos\Chat-o-licious!\Chat-o-licious!\bin\Debug\Chat-o-licious!.exe
+Q:\My Documents\coding\cSharp\snp\demos\Chat-o-licious!\Chat-o-licious!\bin\Debug\Chat-o-licious!.pdb
+Q:\My Documents\coding\cSharp\snp\demos\Chat-o-licious!\Chat-o-licious!\bin\Debug\fullphat.libSnp.dll
+Q:\My Documents\coding\cSharp\snp\demos\Chat-o-licious!\Chat-o-licious!\bin\Debug\fullphat.libSnp.pdb
