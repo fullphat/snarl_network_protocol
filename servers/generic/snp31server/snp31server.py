@@ -65,7 +65,7 @@ def do_demo():
 
 def print_help():
     print('');
-    print('Usage: python3.6 snp31server [port]')
+    print('Usage: python3 snp31server [port]')
     print('[port] will default to 9888 if not supplied')
     print('')
     print('Listens for incoming FORWARD or NOTIFY requests and displays a notification using the local environment where possible.  Currently only macOS and certain Linux platforms are supported.')
