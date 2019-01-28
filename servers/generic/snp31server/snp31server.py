@@ -8,7 +8,7 @@ import snp31
 import os
 import time
 
-ver = "0.3.1"
+ver = "0.4"
 
 verboseMode = False
 
