@@ -95,6 +95,13 @@ if __name__ == "__main__":
     print('Copyright (c) 2018 full phat products')
     print('')
 
+    try:
+        os.mkdir("cached")
+
+    except:
+        pass
+
+
     if len(sys.argv) > portArg:
         try:
             startport = int(sys.argv[portArg])
